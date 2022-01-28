@@ -203,21 +203,23 @@ class _DetailsScreenState extends State<DetailsScreen> {
                           SizedBox(
                             height: 20,
                           ),
-                          Expanded(
-                            child: ListView.builder(
-                              scrollDirection: Axis.vertical,
-                              shrinkWrap: true,
-                              itemCount: 7,
-                              itemBuilder: (context, index) {
-                                return DailyWeatherListBuilder(
-                                  hasDivider: index < 6 ? true : false,
-                                  imageName: "Sun cloud angled rain",
-                                  temp:
-                                      "${weatherData["daily"][0]["temp"]["day"]}",
-                                  day: "Monday",
-                                  date: "10 March 2021",
-                                );
-                              },
+                          Container(
+                            child: Expanded(
+                              child: ListView.builder(
+                                scrollDirection: Axis.vertical,
+                                shrinkWrap: true,
+                                itemCount: 7,
+                                itemBuilder: (context, index) {
+                                  return DailyWeatherListBuilder(
+                                    hasDivider: index < 6 ? true : false,
+                                    imageName: "Sun cloud angled rain",
+                                    temp:
+                                        "${weatherData["daily"][0]["temp"]["day"]}",
+                                    day: "Monday",
+                                    date: "10 March 2021",
+                                  );
+                                },
+                              ),
                             ),
                           ),
                         ],
